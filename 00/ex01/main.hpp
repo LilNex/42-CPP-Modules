@@ -2,7 +2,10 @@
     #define MAIN_HPP
 
     #include <iostream>
+    #include <sstream>
     #include "Contact.hpp"
     #include "PhoneBook.hpp"
 
+    std::string ReadPrompt();
+    
 #endif

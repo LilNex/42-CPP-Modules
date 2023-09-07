@@ -15,9 +15,10 @@
             void setIndex(int value);
             bool setFirstName(std::string value);
             bool setLastName(std::string value);
-            void setPhonenumber(std::string value);
-            void setNickname(std::string value);
-            void setDarkSecret(std::string value);
+            bool setPhonenumber(std::string value);
+            bool setNickname(std::string value);
+            bool setDarkSecret(std::string value);
+            void ShowDetails();
             Contact();
             ~Contact();
 

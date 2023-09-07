@@ -3,6 +3,7 @@
 
 Contact::Contact()
 {
+    this->_index = -1;
 }
 
 Contact::~Contact()
@@ -44,9 +45,16 @@ void Contact::setIndex(int value)
     this->_index = value;
 }
 
-void Contact::setPhonenumber(std::string value)
+bool Contact::setPhonenumber(std::string value)
 {
+    if (value.empty())
+    {
+        std::cout << "Phonenumber can't be empty" << std::endl;
+        return false;
+    }
     this->_phonenumber = value;
+    return (true);
+
 }
 
 bool Contact::setFirstName(std::string value)
@@ -64,19 +72,42 @@ bool Contact::setLastName(std::string value)
 {
     if (value.empty())
     {
-        std::cout << "First name can't be empty" << std::endl;
+        std::cout << "Last name can't be empty" << std::endl;
         return false;
     }
     this->_lastName = value;
     return true;
 }
 
-void Contact::setNickname(std::string value)
+bool Contact::setNickname(std::string value)
 {
+    if (value.empty())
+    {
+        std::cout << "Nickname can't be empty" << std::endl;
+        return false;
+    }
     this->_nickname = value;
+    return true;
 }
 
-void Contact::setDarkSecret(std::string value)
+bool Contact::setDarkSecret(std::string value)
 {
+    if (value.empty())
+    {
+        std::cout << "Dark Secret can't be empty" << std::endl;
+        return false;
+    }
     this->_darkSecret = value;
+    return true;
+}
+
+void Contact::ShowDetails()
+{
+    std::cout << ((std::string)"").insert(0, 20, '*') << std::endl;
+    std::cout << "First name : " << this->getFirstName() << std::endl;
+    std::cout << "Last name : " << this->getLastName() << std::endl;
+    std::cout << "Nickname : " << this->getNickname() << std::endl;
+    std::cout << "Phone number : " << this->getPhonenumber() << std::endl;
+    std::cout << "Dark secret : " << this->getDarkSecret() << std::endl;
+    std::cout << ((std::string)"").insert(0, 20, '*') << std::endl;
 }

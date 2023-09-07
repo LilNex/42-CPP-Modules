@@ -11,10 +11,16 @@
             PhoneBook();
             void ShowWelcomeMessage();
             int WaitPrompt();
+            void ShowListContacts();
+            void SearchContact();
+
         private:
             Contact _contacts[8];
             int AddNewContact();
             int HandlePrompt(std::string prompt);
+            void ShowContact(Contact contact);
+            std::string getDisplayString(std::string name);
+            void WriteColumn(std::string text);
             
     };
 

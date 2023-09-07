@@ -6,7 +6,7 @@
 #    By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 13:09:42 by ichaiq            #+#    #+#              #
-#    Updated: 2023/09/06 19:29:33 by ichaiq           ###   ########.fr        #
+#    Updated: 2023/09/07 12:18:40 by ichaiq           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,8 @@ run: re
 
 all: $(NAME)
 
-$(NAME): 
-	@ $(CC) $(FLAGS) $(SRCS) -o $(NAME)
+$(NAME): $(SRCS)
+	$(CC) $(FLAGS) $(SRCS) -o $(NAME)
 
 clean:
 	@$(RM) $(NAME)
