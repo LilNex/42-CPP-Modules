@@ -144,6 +144,8 @@ void PhoneBook::SearchContact()
 		int index = atoi(prompt.c_str());
 		if (index < 8 && this->_contacts[index].getIndex() != -1)
 			this->_contacts[index].ShowDetails();
+		else 
+			std::cout << "Index given is not found" << std::endl;
 
 	}
 	
