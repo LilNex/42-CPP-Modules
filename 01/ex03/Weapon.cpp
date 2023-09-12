@@ -8,10 +8,12 @@ Weapon::Weapon(std::string type)
 
 Weapon::Weapon()
 {
-    this->_type = "undefined";
+    this->_type = "none";
 }
 
-std::string Weapon::getType()
+Weapon::~Weapon() {}
+
+const std::string& Weapon::getType()
 {
     return this->_type;
 }

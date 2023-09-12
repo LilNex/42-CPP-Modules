@@ -3,36 +3,39 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lilnex <lilnex@student.42.fr>              +#+  +:+       +#+         #
+#    By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 13:09:42 by ichaiq            #+#    #+#              #
-#    Updated: 2023/09/08 03:03:20 by lilnex           ###   ########.fr        #
+#    Updated: 2023/09/12 21:41:06 by ichaiq           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME	= account
-	
+NAME	= brainz
+
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98 -g
+FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf
 
 SRCS = $(shell find *.cpp -type f)
+OBJS = $(SRCS:.cpp=.o)
 
-.PHONY: all clean re
-
-run: re
-	./$(NAME)
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
-	$(CC) $(FLAGS) $(SRCS) -o $(NAME)
+%.o: %.cpp $(INCLUDES)
+	$(CC) $(FLAGS) -c $< -o $@
+	
+$(NAME): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	@$(RM) $(NAME)
+	@$(RM) $(OBJS)
 
-fclean:
+fclean: clean
 	@$(RM) $(NAME)
 
 re: clean all
+
+.PHONY: all clean fclean re
+

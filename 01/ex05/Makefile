@@ -6,32 +6,35 @@
 #    By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/09 14:44:10 by ichaiq            #+#    #+#              #
-#    Updated: 2023/09/09 14:44:23 by ichaiq           ###   ########.fr        #
+#    Updated: 2023/09/12 22:36:07 by ichaiq           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= Harl
 	
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
+FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf
 
 SRCS = $(shell find *.cpp -type f)
+OBJS = $(SRCS:.cpp=.o)
 
-.PHONY: all clean re
-
-run: re
-	./$(NAME) Makefile cpp c++ cppcpp
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
-	$(CC) $(FLAGS) $(SRCS) -o $(NAME)
+%.o: %.cpp $(INCLUDES)
+	$(CC) $(FLAGS) -c $< -o $@
+	
+$(NAME): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	@$(RM) $(NAME)
+	@$(RM) $(OBJS)
 
-fclean:
+fclean: clean
 	@$(RM) $(NAME)
 
 re: clean all
+
+.PHONY: all clean fclean re
+

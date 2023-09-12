@@ -6,13 +6,13 @@
 #    By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 13:09:42 by ichaiq            #+#    #+#              #
-#    Updated: 2023/09/12 22:35:52 by ichaiq           ###   ########.fr        #
+#    Updated: 2023/09/12 22:35:15 by ichaiq           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME	= sed
-	
+NAME	= morebrainz
+
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf

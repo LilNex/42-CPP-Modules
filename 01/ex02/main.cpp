@@ -8,9 +8,6 @@ int main()
     std::string *stringPTR = &value;
     std::string &stringREF = value;
 
-    // std::cout << *stringPTR << std::endl;
-
-
     std::cout << &value << std::endl;
     std::cout << stringPTR << std::endl;
     std::cout << &stringREF << std::endl;
@@ -18,4 +15,5 @@ int main()
     std::cout << value << std::endl;
     std::cout << *stringPTR << std::endl;
     std::cout << stringREF << std::endl;
+
 }
