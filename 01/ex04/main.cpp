@@ -15,7 +15,17 @@ sed::sed(char **av)
     outfileName.append(".replace");
     
     this->fileStream.open(this->_filename, std::ifstream::in);
+    if (!this->fileStream.is_open())
+    {
+        std::cout << "Error: Can't open input file" << std::endl;
+        std::exit(1);
+    }
     this->outfileStream.open(outfileName, std::ifstream::out);
+    if (!this->outfileStream.is_open())
+    {
+        std::cout << "Error: Can't open file" << std::endl;
+        std::exit(1);
+    }
 
 }
 
@@ -26,7 +36,6 @@ int sed::calculate_lenght(std::string line)
     size_t i = 0;
     do
     {
-
         i = line.find(this->to_find, i);
         if (i != std::string::npos)
             occurences++; 
@@ -60,7 +69,6 @@ void sed::openfile()
     std::string line;
     while (getline(fileStream, line))
         this->replace_inline(line);
-    
 }
 
 
