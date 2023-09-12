@@ -12,7 +12,7 @@
         public:
             Fixed();
             ~Fixed();
-            Fixed(Fixed &obj);
+            Fixed(const Fixed &obj);
             void operator=(Fixed const &obj);
 
             int getRawBits(void) const;
