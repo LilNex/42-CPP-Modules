@@ -4,8 +4,6 @@
 
     #include "main.hpp"
     
-    typedef void(*fct_ptr) (void);
-
     class Harl
     {
         public: 
@@ -19,5 +17,7 @@
             void error(void);
             
     };
+    
+    typedef void (Harl::* fct_ptr)(void);
     
 #endif

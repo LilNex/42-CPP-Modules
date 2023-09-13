@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 14:54:14 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/09/12 22:57:03 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/09/13 02:42:50 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void Harl::error(void)
 void Harl::complain(std::string name)
 {
     std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    void (Harl::* fptr[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    fct_ptr functions[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
     int i = 0;
     while (i < 4)
@@ -49,7 +49,7 @@ void Harl::complain(std::string name)
         else i++;
     if (i < 4)
     {
-        void (Harl::* selectedFunction)() = fptr[i];
+        void (Harl::* selectedFunction)() = functions[i];
         (this->*selectedFunction)(); 
     }
     
