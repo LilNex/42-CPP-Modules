@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/13 15:57:30 by ichaiq            #+#    #+#             */
+/*   Updated: 2023/09/13 16:05:08 by ichaiq           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include <iostream>
 #include "Fixed.hpp"
@@ -16,10 +28,10 @@ int main( void )
     std::cout << "c is " << c << std::endl;
     std::cout << "d is " << d << std::endl;
     
-    std::cout << "a is " << a.toInt() << " as float" << std::endl;
-    std::cout << "b is " << b.toInt() << " as float" << std::endl;
-    std::cout << "c is " << c.toInt() << " as float" << std::endl;
-    std::cout << "d is " << d.toInt() << " as float" << std::endl;
+    std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+    std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+    std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+    std::cout << "d is " << d.toInt() << " as integer" << std::endl;
     
     return 0;
 }

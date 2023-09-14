@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/13 15:57:40 by ichaiq            #+#    #+#             */
+/*   Updated: 2023/09/14 21:44:32 by ichaiq           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed(const int value)
@@ -35,7 +47,7 @@ int Fixed::toInt(void) const
 
 float Fixed::toFloat(void) const
 {
-    return static_cast<float>(this->_value) / (1 << this->_fractionnal_bits);
+    return (static_cast<float>(this->_value) ) / (1 << this->_fractionnal_bits);
 }
 
 Fixed::~Fixed() {}
@@ -72,6 +84,70 @@ bool Fixed::operator>=(const Fixed &obj) const
 bool Fixed::operator<=(const Fixed &obj) const
 {
     return (this->getRawBits() <= obj.getRawBits());
+}
+
+Fixed& Fixed::operator++()
+{
+    this->_value++;
+    return (*this);
+}
+Fixed Fixed::operator++(int)
+{
+    Fixed tmp(*this);
+    this->_value++;
+    return (tmp);
+}
+
+Fixed& Fixed::operator--()
+{
+    this->_value--;
+    return (*this);
+}
+Fixed Fixed::operator--(int)
+{
+    Fixed tmp(*this);
+    this->_value--;
+    return (tmp);
+}
+
+Fixed Fixed::operator+(const Fixed &obj) const
+{
+    return (Fixed(this->toFloat() + obj.toFloat()));
+}
+
+Fixed Fixed::operator-(const Fixed &obj) const
+{
+    return (Fixed(this->toFloat() - obj.toFloat()));
+}
+
+Fixed Fixed::operator*(const Fixed &obj) const
+{
+    return (Fixed(this->toFloat() * obj.toFloat()));
+}
+
+Fixed Fixed::operator/(const Fixed &obj) const
+{
+    return (Fixed(this->toFloat() / obj.toFloat()));
+}
+
+Fixed& Fixed::min(Fixed &a, Fixed &b)
+{
+    return (a < b ? a : b);
+}
+
+Fixed& Fixed::max(Fixed &a, Fixed &b)
+{
+    return (a > b ? a : b);
+}
+
+const Fixed& Fixed::min(const Fixed &a, const Fixed &b)
+{
+    return (a < b ? a : b);
+}
+
+const Fixed& Fixed::max(const Fixed &a, const Fixed &b)
+{
+    return (a > b ? a : b);
 }
 
 int Fixed::getRawBits(void) const

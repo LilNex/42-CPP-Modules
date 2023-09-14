@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/13 15:57:11 by ichaiq            #+#    #+#             */
+/*   Updated: 2023/09/13 15:58:27 by ichaiq           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed() : _value(0)
 {
-    this->_value = 0;
     std::cout << "Default constructor called" << std::endl;
 }
 
@@ -15,7 +26,6 @@ Fixed::Fixed(const Fixed &obj)
 Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;
-
 }
 
 void Fixed::operator=(Fixed const &obj)
