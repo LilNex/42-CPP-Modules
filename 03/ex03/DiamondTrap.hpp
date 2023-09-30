@@ -6,15 +6,16 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 16:41:38 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/09/15 17:16:25 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/09/16 00:29:21 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DIAMOND_TRAP_HPP
     #define DIAMOND_TRAP_HPP
+    
 
-    #include "FragTrap.cpp"
-    #include "ScavTrap.cpp"
+    #include "FragTrap.hpp"
+    #include "ScavTrap.hpp"
 
     class DiamondTrap : public FragTrap, public ScavTrap
     {

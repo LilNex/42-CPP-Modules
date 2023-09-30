@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 13:00:53 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/09/15 14:39:30 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/09/29 13:20:22 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
     #include "ClapTrap.hpp"
 
-    class ScavTrap : public ClapTrap
+    class ScavTrap : public virtual ClapTrap
     {
         private:
 

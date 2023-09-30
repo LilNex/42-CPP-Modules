@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 01:24:01 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/09/15 14:40:05 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/09/16 00:23:10 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 ClapTrap::ClapTrap(): _name("unnamed"), _hit_point(10), _energy_point(10), _attack_damage(0)
 {
-    std::cout << "A ClapTrap " << this->_name << " has been consructed" << std::endl;
+    std::cout << "A ClapTrap " << this->_name << " has been constructed" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name("unnamed"), _hit_point(10), _energy_point(10), _attack_damage(0)
 {
     this->_name = name;
-    std::cout << "A ClapTrap " << this->_name << " has been consructed" << std::endl;
+    std::cout << "A ClapTrap " << this->_name << " has been constructed" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &obj)

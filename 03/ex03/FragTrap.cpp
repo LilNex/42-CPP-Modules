@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 14:42:07 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/09/15 17:17:53 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/09/16 00:23:15 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap() 
 {
-    std::cout << "A FragTrap " << this->_name << " has been consructed" << std::endl;
+    std::cout << "A FragTrap " << this->_name << " has been constructed" << std::endl;
 
 }
 
@@ -23,7 +23,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
     this->_hit_point = 100;
     this->_energy_point = 100;
     this->_attack_damage = 30;
-    std::cout << "A FragTrap " << this->_name << " has been consructed" << std::endl;
+    std::cout << "A FragTrap " << this->_name << " has been constructed" << std::endl;
 
 }
 
@@ -52,7 +52,3 @@ void    FragTrap::highFiveGuys(void)
     std::cout << "FragTrap is doing a high five !" << std::endl;
 }
 
-void FragTrap::attack(std::string target)
-{
-    this->ScavTrap::attack(target);
-}
