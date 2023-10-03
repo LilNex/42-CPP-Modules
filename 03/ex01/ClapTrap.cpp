@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 01:24:01 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/09/15 14:40:05 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/02 23:28:31 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,23 @@ ClapTrap::ClapTrap(std::string name) : _name("unnamed"), _hit_point(10), _energy
 
 ClapTrap::ClapTrap(const ClapTrap &obj)
 {
-    this->_attack_damage = obj._attack_damage;
-    this->_name = obj._name;
-    this->_hit_point = obj._hit_point;
-    this->_energy_point = obj._energy_point;
-    std::cout << "A ClapTrap has been constructed" << std::endl;    
+    *this = obj;
+    std::cout << "ClapTrap " << this->_name << "has been constructed" << std::endl;    
 }
 
-ClapTrap::~ClapTrap() {
-    std::cout << "A ClapTrap has been deconstructed" << std::endl;    
+ClapTrap::~ClapTrap() 
+{
+    std::cout  << "ClapTrap " << this->_name << " has been destructed" << std::endl;    
 }
 
 void ClapTrap::operator=(const ClapTrap &obj)
 {
     if (this == &obj)
         return;
+    this->_name = obj._name;
+    this->_attack_damage = obj._attack_damage;
+    this->_hit_point = obj._hit_point;
+    this->_energy_point = obj._energy_point;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -67,10 +69,9 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap can't do this !" << std::endl;
         return;
     }
-    this->_hit_point = amount;
+    this->_hit_point += amount;
     this->_energy_point--;
     std::cout << "ClapTrap " << this->_name << " is regenerating " << amount << " of hit points" << std::endl;
-    
 }
 
 

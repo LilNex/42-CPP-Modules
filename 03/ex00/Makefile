@@ -6,7 +6,7 @@
 #    By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 01:13:47 by ichaiq            #+#    #+#              #
-#    Updated: 2023/09/15 02:39:07 by ichaiq           ###   ########.fr        #
+#    Updated: 2023/10/02 00:53:39 by ichaiq           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME	= ClapTrap
 	
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 RM		= rm -rf
 
 SRCS = $(shell find *.cpp -type f)

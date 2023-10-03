@@ -6,12 +6,12 @@
 #    By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 01:13:47 by ichaiq            #+#    #+#              #
-#    Updated: 2023/09/16 00:25:52 by ichaiq           ###   ########.fr        #
+#    Updated: 2023/09/30 23:11:26 by ichaiq           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME	= FragTrap
+NAME	= DiamondTrap
 	
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror -std=c++98

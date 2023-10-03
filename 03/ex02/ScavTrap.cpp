@@ -6,16 +6,19 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 14:42:07 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/09/16 00:23:31 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/03 01:47:02 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() 
-{
-    std::cout << "A ScavTrap " << this->_name << " has been constructed" << std::endl;
 
+ScavTrap::ScavTrap() : ClapTrap()
+{
+    this->_hit_point = 100;
+    this->_energy_point = 50;
+    this->_attack_damage = 20;
+    std::cout << "A default ScavTrap " << this->_name << " has been constructed" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
@@ -24,27 +27,27 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
     this->_energy_point = 50;
     this->_attack_damage = 20;
     std::cout << "A ScavTrap " << this->_name << " has been constructed" << std::endl;
-
 }
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "A ScavTrap robot has been destructed" << std::endl;
+    std::cout << "ScavTrap " << this->_name << " has been destructed" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &obj)
 {
-    this->_attack_damage = obj._attack_damage;
-    this->_name = obj._name;
-    this->_hit_point = obj._hit_point;
-    this->_energy_point = obj._energy_point;
-    std::cout << "A ScavTrap has been constructed" << std::endl;    
+    *this = obj;
+    std::cout << "A ScavTrap (" << this->_name << ") has been copied" << std::endl;    
 }
 
 void ScavTrap::operator=(const ScavTrap &obj)
 {
     if (this == &obj)
         return;
+    this->_name = obj._name;
+    this->_attack_damage = obj._attack_damage;
+    this->_hit_point = obj._hit_point;
+    this->_energy_point = obj._energy_point;
 }
 
 void    ScavTrap::guardGate()
