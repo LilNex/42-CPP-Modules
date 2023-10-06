@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 01:24:01 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/03 01:47:30 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/03 12:48:25 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap can't do this !" << std::endl;
         return;
     }
-    this->_hit_point = amount;
+    this->_hit_point += amount;
     this->_energy_point--;
     std::cout << "ClapTrap " << this->_name << " is regenerating " << amount << " of hit points" << std::endl;
     

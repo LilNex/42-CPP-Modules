@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 14:42:07 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/03 01:49:14 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/03 17:22:14 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,5 @@ void FragTrap::operator=(const FragTrap &obj)
 
 void    FragTrap::highFiveGuys(void)
 {
-    std::cout << "FragTrap is doing a high five !" << std::endl;
+    std::cout << "FragTrap  "<< this->_name << "is doing a high five !" << std::endl;
 }
