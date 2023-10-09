@@ -1,7 +1,7 @@
 # ifndef ANIMAL_HPP
     #define ANIMAL_HPP
 
-    #include "main.hpp"
+    #include <iostream>
 
     class Animal
     {
@@ -10,9 +10,14 @@
         protected:
             std::string type;
         public:
-            Animal();
-            ~Animal();
-            void    operator=(const Animal &obj);
+            Animal  ();
+            Animal  (const Animal &obj);
+            ~Animal ();
+
+            void            operator=(const Animal &obj);
+            std::string     getType();
+            virtual void            makeSound();
+
 
     };
 

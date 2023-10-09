@@ -1,44 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 23:20:08 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/09 16:46:03 by ichaiq           ###   ########.fr       */
+/*   Created: 2023/10/06 23:29:02 by ichaiq            #+#    #+#             */
+/*   Updated: 2023/10/09 16:46:12 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-
-Dog::Dog() : Animal()
+ 
+Cat::Cat() : Animal()
 {
-    this->Animal::type = "Dog";
-    this->Dog::type = "Dog";
-    std::cout << "A new dog has born !" << std::endl;
+    this->Animal::type = "Cat";
+    this->type = "Cat";
+    std::cout << "A new Cat has born !" << std::endl;
 }
 
-Dog::Dog(const Dog &obj)
+Cat::Cat(const Cat &obj)
 {
     *this = obj;
-    std::cout << "A new dog has copied !" << std::endl;
+    std::cout << "A new Cat has copied !" << std::endl;
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
-    std::cout << "An Dog has died !" << std::endl;
+    std::cout << "An Cat has died !" << std::endl;
 }
 
-void Dog::operator=(const Dog &obj)
+void Cat::operator=(const Cat &obj)
 {
     if (this != &obj)
         this->type = obj.type;
 }
 
-void Dog::makeSound()
+void Cat::makeSound()
 {
-    std::cout << "Wouf Wouf" << std::endl;
+    std::cout << "MeowMeoow MFK !" << std::endl;
 }
