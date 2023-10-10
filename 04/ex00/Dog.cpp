@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 23:20:08 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/09 16:46:03 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/10 18:59:37 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 
 Dog::Dog() : Animal()
 {
-    this->Animal::type = "Dog";
-    this->Dog::type = "Dog";
+    this->type = "Dog";
     std::cout << "A new dog has born !" << std::endl;
 }
 
@@ -38,7 +37,7 @@ void Dog::operator=(const Dog &obj)
         this->type = obj.type;
 }
 
-void Dog::makeSound()
+void Dog::makeSound() const
 {
     std::cout << "Wouf Wouf" << std::endl;
 }

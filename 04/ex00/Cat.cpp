@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 23:29:02 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/09 16:46:12 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/10 19:00:47 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
  
 Cat::Cat() : Animal()
 {
-    this->Animal::type = "Cat";
     this->type = "Cat";
     std::cout << "A new Cat has born !" << std::endl;
 }
@@ -38,7 +37,7 @@ void Cat::operator=(const Cat &obj)
         this->type = obj.type;
 }
 
-void Cat::makeSound()
+void Cat::makeSound() const
 {
     std::cout << "MeowMeoow MFK !" << std::endl;
 }

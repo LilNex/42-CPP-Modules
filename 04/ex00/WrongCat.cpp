@@ -1,46 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 18:39:53 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/10 18:59:48 by ichaiq           ###   ########.fr       */
+/*   Created: 2023/10/06 23:29:02 by ichaiq            #+#    #+#             */
+/*   Updated: 2023/10/10 19:11:35 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
 
+#include "WrongCat.hpp"
 
-Animal::Animal() : type("undefined")
+ 
+WrongCat::WrongCat() : WrongAnimal()
 {
-    std::cout << "An animal has born !" << std::endl;
+    this->type = "WrongCat";
+    std::cout << "A new WrongCat has born !" << std::endl;
 }
 
-Animal::Animal(const Animal &obj)
+WrongCat::WrongCat(const WrongCat &obj)
 {
     *this = obj;
-    std::cout << "An animal has copied !" << std::endl;
+    std::cout << "A new WrongCat has copied !" << std::endl;
 }
 
-Animal::~Animal()
+WrongCat::~WrongCat()
 {
-    std::cout << "An animal has died !" << std::endl;
+    std::cout << "An WrongCat has died !" << std::endl;
 }
 
-void Animal::operator=(const Animal &obj)
+void WrongCat::operator=(const WrongCat &obj)
 {
     if (this != &obj)
         this->type = obj.type;
 }
 
-std::string Animal::getType()
+void WrongCat::makeSound() const
 {
-    return this->type;
-}
-
-void Animal::makeSound() const
-{
-    std::cout << "..." << std::endl;
+    std::cout << "MeowMeoow MFK !" << std::endl;
 }
