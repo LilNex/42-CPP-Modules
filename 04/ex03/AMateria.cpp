@@ -12,6 +12,11 @@
 
 #include "AMateria.hpp"
 
+AMateria::AMateria()
+{
+    this->_type = "Material";
+}
+
 AMateria::AMateria(const AMateria &obj)
 {
     this->_type = obj._type;

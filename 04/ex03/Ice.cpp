@@ -14,6 +14,7 @@
 
 Ice::Ice() : AMateria("Ice")
 {
+    std::cout << "An ice material is created" << std::endl;
 }
 
 Ice::Ice(const Ice &obj) : AMateria(obj)
@@ -22,6 +23,7 @@ Ice::Ice(const Ice &obj) : AMateria(obj)
 
 Ice::~Ice()
 {
+    std::cout << "An ice materia is destroyed" << std::endl;
     
 }
 

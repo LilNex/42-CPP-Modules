@@ -31,10 +31,14 @@ void Character::operator=(const Character &obj)
 {
     if (this == &obj)
         return;
+    this->name = obj.name
     for (size_t i = 0; i < 4; i++)
     {
-        if (obj.inventory != nullptr)
+        if (obj.inventory[i] != NULL)
+        {
+            delete this->inventory[i];
             this->inventory[i] = obj.inventory[i]->clone();
+        }
     }
     
 }
@@ -48,7 +52,7 @@ void Character::equip(AMateria* m)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (this->inventory[i] == nullptr)
+        if (this->inventory[i] == NULL)
         {
             this->inventory[i] = m;
             return;
@@ -62,8 +66,12 @@ void Character::unequip(int idx)
    
     if (idx >= 0 && idx < 4)
     {
-        if (this->inventory[idx] != nullptr)
+        if (this->inventory[idx] != NULL)
+        {
+            delete this->inventory[i];
+            this->inventory[i] = NULL;
             std::cout << "Material dropped from slot "<< idx << std::endl;
+        }
         else 
             std::cout << "Slot " << idx << " is empty." << std::endl;
     }
@@ -71,3 +79,12 @@ void Character::unequip(int idx)
     
 }
 
+void Character::use(int idx, ICharacter &target)
+{
+    if (this->inventory[idx] != NULL)
+    {
+        if (this->inventory[idx]->getType() == "ice")
+        else if (this->inventory[idx]->getType() == "cure")
+    }
+    else std::cout << "Nothing is equiped on slot " << idx << std::endl;
+}
