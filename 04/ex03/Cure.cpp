@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 00:17:48 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/13 22:32:03 by ichaiq           ###   ########.fr       */
+/*   Created: 2023/10/12 00:22:40 by ichaiq            #+#    #+#             */
+/*   Updated: 2023/10/13 22:49:58 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Cure.hpp"
 
-# ifndef ICE_HPP
- # define ICE_HPP
+Cure::Cure() : AMateria("cure")
+{
+    std::cout << "A cure material is created" << std::endl;
+}
 
-    #include "AMateria.hpp"
-    class Ice : public AMateria
-    {
-        
-        public:
-            Ice();
-            Ice(const Ice &obj);
-            virtual     ~Ice ();
-            
-            void        operator=(const Ice &obj);    
-            
-            Ice* clone() const;
+Cure::Cure(const Cure &obj) : AMateria(obj)
+{
+}
 
+Cure::~Cure()
+{
+    std::cout << "A cure materia is destroyed" << std::endl;
+    
+}
 
-    };
+void Cure::operator=(const Cure &obj)
+{
+    if (this == &obj)
+        return;
+}
 
-
-#endif 
+Cure *Cure::clone() const
+{
+    return (new Cure());
+}

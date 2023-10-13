@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 00:45:31 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/12 01:17:21 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/13 23:00:54 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ Character::Character(const Character &obj)
     *this = obj;
 }
 
+Character::Character(std::string name)
+{
+    this->name = name;
+}
+
 Character::~Character()
 {
     
@@ -31,7 +36,7 @@ void Character::operator=(const Character &obj)
 {
     if (this == &obj)
         return;
-    this->name = obj.name
+    this->name = obj.name;
     for (size_t i = 0; i < 4; i++)
     {
         if (obj.inventory[i] != NULL)
@@ -50,11 +55,21 @@ std::string const &Character:: getName() const
 
 void Character::equip(AMateria* m)
 {
+    if (m == NULL)
+        return;
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->inventory[i] == m)
+        {
+            std::cout << this->getName() <<" has already the " << m->getType() << " equipped." << std::cout;
+        }
+    }
     for (int i = 0; i < 4; i++)
     {
         if (this->inventory[i] == NULL)
         {
             this->inventory[i] = m;
+            std::cout << m->getType() << " is equipped at slot "<< i << std::endl;
             return;
         }
     }
@@ -68,8 +83,8 @@ void Character::unequip(int idx)
     {
         if (this->inventory[idx] != NULL)
         {
-            delete this->inventory[i];
-            this->inventory[i] = NULL;
+            delete this->inventory[idx];
+            this->inventory[idx] = NULL;
             std::cout << "Material dropped from slot "<< idx << std::endl;
         }
         else 
@@ -82,9 +97,6 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter &target)
 {
     if (this->inventory[idx] != NULL)
-    {
-        if (this->inventory[idx]->getType() == "ice")
-        else if (this->inventory[idx]->getType() == "cure")
-    }
+        this->inventory[idx]->use(target);
     else std::cout << "Nothing is equiped on slot " << idx << std::endl;
 }
