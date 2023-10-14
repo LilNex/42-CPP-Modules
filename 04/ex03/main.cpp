@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 00:10:38 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/13 23:33:40 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/14 16:30:06 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,29 @@
 // }
 
 
+void f()
+{
+    system("leaks Materias");
+}
 
 int main()
 {
+    atexit(f);
+    
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
     ICharacter* me = new Character("me");
     AMateria* tmp;
+    
     tmp = src->createMateria("ice");
     me->equip(tmp);
     tmp = src->createMateria("cure");
     me->equip(tmp);
+    
     ICharacter* bob = new Character("bob");
+    
+
     me->use(0, *bob);
     me->use(1, *bob);
     delete bob;

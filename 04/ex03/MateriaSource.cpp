@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 23:07:52 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/13 23:32:26 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/14 16:29:42 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void MateriaSource::learnMateria(AMateria *m)
     {
         if (this->materials[i] == NULL)
         {
-            this->materials[i] = m->clone();
+            this->materials[i] = m;
             return;
         }
     }

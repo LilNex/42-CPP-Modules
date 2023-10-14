@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 00:33:52 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/13 23:12:12 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/13 23:39:08 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ AMateria::AMateria(std::string const & type)
 
 AMateria::~AMateria ()
 {
-    
+
 }
 
 void AMateria::operator=(const AMateria &obj)
