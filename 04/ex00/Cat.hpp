@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 23:28:56 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/10 18:59:23 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/13 23:41:47 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
         public:
             Cat     ();
             Cat     (const Cat &obj);
-            ~Cat    ();
+            virtual ~Cat    ();
             void    operator=(const Cat &obj);
             virtual void    makeSound() const;
 

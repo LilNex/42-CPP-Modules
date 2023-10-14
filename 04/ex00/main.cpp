@@ -6,16 +6,21 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:47:35 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/10 19:00:08 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/11 01:33:36 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
 #include "main.hpp"
+void f()
+{
+    system("leaks Poly");
+}
 
 int main()
 {
+    atexit(f);
     // Animal* meta = new Animal();
     // Animal* j = new Dog();
     Animal* a = new Animal();
@@ -35,4 +40,11 @@ int main()
     c->makeSound(); 
     cPtr->makeSound(); 
     a->makeSound(); 
+
+    delete a;
+    delete cat;
+    delete i;
+
+    return (0);
+    
 }

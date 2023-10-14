@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 00:45:31 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/13 23:00:54 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/13 23:40:23 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,11 @@ Character::Character(std::string name)
 
 Character::~Character()
 {
-    
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->inventory[i] != NULL)
+            delete this->inventory[i];
+    }
 }
 
 void Character::operator=(const Character &obj)
@@ -96,7 +100,11 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
-    if (this->inventory[idx] != NULL)
-        this->inventory[idx]->use(target);
-    else std::cout << "Nothing is equiped on slot " << idx << std::endl;
+    if (idx >= 0 && idx < 4)
+    {
+        if (this->inventory[idx] != NULL)
+            this->inventory[idx]->use(target);
+        else std::cout << "Nothing is equiped on slot " << idx << std::endl;
+    }
+    else std::cout << "Index given out of range" << std::endl;      
 }

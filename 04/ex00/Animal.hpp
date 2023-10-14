@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:47:47 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/10 18:59:32 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/11 01:34:53 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
         public:
             Animal  ();
             Animal  (const Animal &obj);
-            ~Animal ();
+            virtual ~Animal ();
 
             void            operator=(const Animal &obj);
             std::string     getType();

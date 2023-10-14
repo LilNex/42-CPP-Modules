@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 23:08:24 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/13 23:31:55 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/13 23:36:49 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@
 
             void operator=(const MateriaSource &obj);
 
-            void learnMateria(AMateria *m);
-            AMateria *createMateria(std::string const & type);
+            virtual void learnMateria(AMateria *m);
+            virtual AMateria *createMateria(std::string const & type);
             
         
     };

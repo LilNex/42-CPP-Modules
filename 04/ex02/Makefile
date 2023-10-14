@@ -6,15 +6,15 @@
 #    By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/04 18:32:30 by ichaiq            #+#    #+#              #
-#    Updated: 2023/10/09 16:48:55 by ichaiq           ###   ########.fr        #
+#    Updated: 2023/10/14 03:13:14 by ichaiq           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME	= Poly
+NAME	= abstract
 	
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	= -Wall -Wextra -Werror -std=c++98# -g3 -fsanitize=address
 RM		= rm -rf
 
 SRCS = $(shell find *.cpp -type f)

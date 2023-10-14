@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 23:20:08 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/11 01:40:14 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/14 03:18:41 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ void Dog::operator=(const Dog &obj)
     if (this == &obj)
         return;
     this->type = obj.type;
-    this->_brain = obj._brain;
+    if (this->_brain && obj._brain)
+        *this->_brain = *obj._brain;
 }
 
 void Dog::makeSound() const

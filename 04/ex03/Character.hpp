@@ -6,7 +6,7 @@
 /*   By: ichaiq <ichaiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 00:46:20 by ichaiq            #+#    #+#             */
-/*   Updated: 2023/10/13 23:00:27 by ichaiq           ###   ########.fr       */
+/*   Updated: 2023/10/13 23:37:21 by ichaiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
             Character();
             Character(std::string name);
             Character(const Character &obj);
-            ~Character();
+            virtual ~Character();
 
             void operator=(const Character &obj);
 
